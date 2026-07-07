@@ -1,0 +1,7 @@
+FALSIFIABLE CLAIM (primary, at the challenge's suggested 90% target):
+At 90% sparsity (target=0.9), saliency (|W*grad|) pruning retains 97.16% mean test accuracy across 5 seeds (std=1.09pp) versus 97.21% (std=1.04pp) for magnitude pruning -- a gap of -0.06 percentage points, which is NOT clearly larger than the pooled per-seed noise (1.51pp).
+
+Supplementary data point at a more extreme, harder budget (98% target):
+At 98% sparsity (target=0.98), saliency (|W*grad|) pruning retains 95.10% mean test accuracy across 5 seeds (std=1.91pp) versus 94.65% (std=0.50pp) for magnitude pruning -- a gap of +0.45 percentage points, which is NOT clearly larger than the pooled per-seed noise (1.97pp).
+
+Honest reading: on this dataset/model size, the saliency-vs-magnitude gap is within seed-to-seed noise at every sparsity we swept, including 90%. We report this as the actual result rather than cherry-picking a seed or sparsity level that shows a bigger gap. See DESIGN.md for why we believe this task is too easy / too low-capacity for the two criteria to diverge much, and what we'd expect to change on a larger model/dataset.
